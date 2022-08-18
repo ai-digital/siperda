@@ -33,7 +33,7 @@ class CreateSusutsTable extends Migration
 
 
             $table->timestamps();
-            $table->timestamps();
+           
         });
     }
 
