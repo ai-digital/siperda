@@ -17,18 +17,8 @@ class CreateVendorsTable extends Migration
             $table->id();
             $table->string('nama_vendor');
             $table->string('alamat')->nullable();
-            $schemaName = $this->argument('name') ?: config("database.connections.mysql.database");
-            $charset = config("database.connections.mysql.charset",'utf8mb4');
-            $collation = config("database.connections.mysql.collation",'utf8mb4_unicode_ci');
-    
-            config(["database.connections.mysql.database" => null]);
-    
-            $query = "CREATE DATABASE IF NOT EXISTS $schemaName CHARACTER SET $charset COLLATE $collation;";
-    
-            DB::statement($query);
-    
-            config(["database.connections.mysql.database" => $schemaName]);
-    
+            $table->string('no_telp', 25)->nullable();
+
             $table->timestamps();
         });
     }

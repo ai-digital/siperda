@@ -14,7 +14,7 @@ class CreateSusutsTable extends Migration
     public function up()
     {
         Schema::create('susuts', function (Blueprint $table) {
-            $table->id();
+           
             $table->id();
             $table->unsignedBigInteger('vendor_id');
              $table->foreign('vendor_id')->references('id')->on('vendors');
@@ -29,11 +29,11 @@ class CreateSusutsTable extends Migration
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-      
+
 
 
             $table->timestamps();
-           
+
         });
     }
 
